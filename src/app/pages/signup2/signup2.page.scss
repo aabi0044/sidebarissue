@@ -1,0 +1,21 @@
+.mt-30 {
+    margin-top: 10%;
+}
+
+.heading {
+    font-size: 2vh;
+}
+
+ion-input,
+ion-datetime,
+ion-select {
+    border: 1px solid var(--ion-color-primary);
+    padding: 12px;
+}
+
+ion-input,
+ion-button,
+ion-datetime,
+ion-select {
+    border-radius: 20px;
+}

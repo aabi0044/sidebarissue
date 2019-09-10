@@ -1,0 +1,57 @@
+<ion-header no-border>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col text-center>
+      <img src="../../../assets/img/logo.svg">
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="mt-30">
+    <ion-col text-center size="8" offset="2">
+      <ion-label class="heading">For signing up, please fill in the boxes below</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="8" offset="2" class="ion-margin-vertical">
+      <ion-label>Creating a Password*</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="8" offset="2">
+      <ion-input placeholder="Fill in your new password..." type="password" padding></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="8" offset="2">
+      <ion-input placeholder="Confirm your new password..." type="password" padding></ion-input>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="8" offset="2" class="ion-margin-vertical">
+      * The Passowrd must be 8-16 characters long. Also it had to
+      contain at least one captial letter and number
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="8" offset="2" class="ion-margin-vertical">
+      <ion-checkbox mode="md" color="secondary"></ion-checkbox>
+      I confirm that all the filled data, is filled correctly.
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="8" offset="2" class="ion-margin-vertical">
+      <ion-button color="secondary" routerLink="/menu/home" expand="block" text-center>Sign up</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

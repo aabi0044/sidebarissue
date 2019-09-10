@@ -1,0 +1,58 @@
+ion-menu-button {
+    display: block !important;
+}
+
+.secondbg {
+    background-color: var(--ion-color-secondary) !important;
+    color: #fff;
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .6);
+}
+
+.primbg {
+    background-color: var(--ion-color-primary) !important;
+    color: #fff;
+    border-top-left-radius: 26px;
+    border-bottom-left-radius: 26px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .6);
+}
+
+.pointlbl {
+    font-size: 4vh;
+
+    span {
+        font-size: 12vh;
+        margin: 12%;
+    }
+}
+
+.mt-10 {
+    margin-top: 40px;
+}
+
+ion-input {
+    border: 1px solid var(--ion-color-primary);
+}
+
+.lotterylbl {
+    font-size: 5vh;
+}
+
+.bb {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.redeembtn {
+    --background: linear-gradient(to right, #a1c4d9 0%, #c0b1d6 100%);
+}
+
+.readybtn {
+    --background: #a8d7be;
+}
+
+ion-input,
+ion-button {
+    border-radius: 20px;
+}
