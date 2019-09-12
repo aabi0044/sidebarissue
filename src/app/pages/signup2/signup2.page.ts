@@ -11,13 +11,18 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class Signup2Page implements OnInit {
 password;
 repassword;
+cnf;
+color;
   constructor(private api:ApiService,private nav:NavController,private auth:AuthService) { }
 
   ngOnInit() {
   }
 register(){
-  if(this.password==this.repassword && this.password!=null && this.repassword!=null){
+  if(this.cnf==true){
+    this.color='blue';
+  if(this.password==this.repassword && this.password!=null && this.repassword!=null ){
 this.auth.signup(this.api.user.email,this.password).then((res:any)=>{
+  console.log(res);
 
   localStorage.setItem('softUser',res.user.uid);
   let data={
@@ -43,6 +48,9 @@ this.api.createUser(res.user.uid,data).then(resp=>{
   }else{
     console.log("fill all");
   }
-
+  }else{
+    this.color='red';
+    console.log("object");
+  }
 }
 }

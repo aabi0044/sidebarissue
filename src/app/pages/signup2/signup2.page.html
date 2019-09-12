@@ -44,8 +44,8 @@
   </ion-row>
 
   <ion-row>
-    <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-checkbox mode="md" color="secondary"></ion-checkbox>
+    <ion-col size="8" offset="2" class="ion-margin-vertical" [ngStyle]="{'color': color}">
+      <ion-checkbox [(ngModel)]="cnf" name="cnf"  mode="md" color="secondary"></ion-checkbox>
       I confirm that all the filled data, is filled correctly.
     </ion-col>
   </ion-row>
