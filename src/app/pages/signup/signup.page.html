@@ -26,13 +26,13 @@
   </ion-row>
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-input placeholder="Name" type="text" padding></ion-input>
+      <ion-input [(ngModel)]="name" name="name" placeholder="Name" type="text" padding></ion-input>
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+      <ion-datetime value="1990-02-19" [(ngModel)]="dob" name="dob" placeholder="Select Date"></ion-datetime>
     </ion-col>
   </ion-row>
 
@@ -44,24 +44,24 @@
 
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-input placeholder="E-mail address" type="email" padding></ion-input>
+      <ion-input [(ngModel)]="email" [ngStyle]="{'color': color}" name="email" placeholder="E-mail address" type="email" padding></ion-input>
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="2"></ion-col>
     <ion-col size="2">
-      <ion-input placeholder="+.." type="text" padding></ion-input>
+      <ion-input placeholder="+.." type="number" maxlength="2" [(ngModel)]="phoneExtension" name="phoneExtension" padding></ion-input>
     </ion-col>
     <ion-col size="6">
-      <ion-input placeholder="Phone Number" type="text" padding size="5"></ion-input>
+      <ion-input placeholder="Phone Number" [(ngModel)]="phone" name="phone" type="number" padding size="5"></ion-input>
     </ion-col>
     <ion-col size="2"></ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-select placeholder="Country">
+      <ion-select placeholder="Country" (ionChange)="countryName($event.target.value)">
         <ion-select-option value="Afganistan">Afghanistan</ion-select-option>
         <ion-select-option value="Albania">Albania</ion-select-option>
         <ion-select-option value="Algeria">Algeria</ion-select-option>
@@ -314,21 +314,21 @@
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-checkbox mode="md" color="secondary"></ion-checkbox>
+      <ion-checkbox mode="md" color="secondary" [(ngModel)]="terms" name="terms"></ion-checkbox>
       I accept the terms of agreement while using this app...
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-checkbox mode="md" color="secondary"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="emailNotification" name="emailNotification" mode="md" color="secondary"></ion-checkbox>
       I want to receive notification in terms of e-mail when I win a prize.
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-button color="secondary" routerLink="/signup2" expand="block" text-center>Continue</ion-button>
+      <ion-button color="secondary"  expand="block" text-center (click)="continue()">Continue</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

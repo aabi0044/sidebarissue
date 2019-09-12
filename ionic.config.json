@@ -1,5 +1,7 @@
 {
   "name": "softexApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

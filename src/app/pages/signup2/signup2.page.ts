@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup2.page.scss'],
 })
 export class Signup2Page implements OnInit {
-
+password;
+repassword;
   constructor() { }
 
   ngOnInit() {
   }
-
+register(){
+  
+}
 }
