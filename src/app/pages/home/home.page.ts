@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  newEntry=false;
   constructor() { }
 
   ngOnInit() {
@@ -31,5 +31,7 @@ export class HomePage implements OnInit {
     var rand = myArray[Math.floor(Math.random() * myArray.length)];
     console.log(rand);
   }
-
+  newPoints(){
+    this.newEntry=true;
+  }
 }
