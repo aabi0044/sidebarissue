@@ -30,4 +30,10 @@ return this.afs.doc('users/'+id).valueChanges();
   addLottery(data){
     return this.afs.collection('lotteries').add(data);
   }
+  getAllLotteries(){
+    return this.afs.collection('lotteries').snapshotChanges();
+  }
+  getSpecificLottery(id){
+    return this.afs.collection('lotteries',ref=>ref.where('userId','==',id)).snapshotChanges();
+  }
 }

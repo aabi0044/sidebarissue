@@ -11,14 +11,14 @@
   <ion-row class="ion-margin-vertical">
     <ion-col size="5.5" class="secondbg" padding>
       <ion-label class="pointlbl">You have collected<br>
-        <span>4</span> points
+        <span *ngIf="weekLotteries">{{weekLotteries.length}}</span> points
       </ion-label>
     </ion-col>
     <ion-col size="1">
     </ion-col>
     <ion-col size="5.5" class="primbg" padding>
       <ion-label class="pointlbl">You saved points in <br>
-        <span>2</span> months
+        <span *ngIf="monthLotteries">{{monthLotteries.length}}</span> months
       </ion-label>
     </ion-col>
   </ion-row>

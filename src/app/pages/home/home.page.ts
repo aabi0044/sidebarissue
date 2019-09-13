@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 import { HelperService } from 'src/app/services/helper/helper.service';
 import { Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import {map} from 'rxjs/operators';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -24,16 +25,21 @@ lotteryNo;
 lotteryImage;
 color;
 userData;
+monthLotteries;
+weekLotteries;
+
   constructor(private api:ApiService,private helper:HelperService,
     private camera: Camera,
     private afStorage: AngularFireStorage,
     ) {
-      this.api.getUser(localStorage.getItem('softUser')).pipe(first()).toPromise().then(res=>{
+      this.api.getUser(localStorage.getItem('softUser')).subscribe(res=>{
 this.userData=res;
       })
      }
 
   ngOnInit() {
+    this.getMonthlyLotteries();
+    this.getWeeklyLotteries();
     var myArray=[{
       a:0
     },
@@ -67,7 +73,8 @@ this.userData=res;
 let data={
   lotteryNo:this.lotteryNo,
   lotteryImage:this.lotteryImage,
-  date: new Date
+  date: Date.now(),
+  userId:localStorage.getItem('softUser')
 }
 this.api.addLottery(data).then((res:any)=>{
 let data1={
@@ -87,8 +94,74 @@ this.newEntry=false;
 })
     }else{
       this.color='red';
+      this.helper.presentToast('Enter Lottery Number ')
     }
   }
+
+getMonthlyLotteries(){
+this.api.getSpecificLottery(localStorage.getItem('softUser')).pipe(map(list => list.map(a => {
+  const data = a.payload.doc.data();
+  const id = a.payload.doc.id;
+  return { id, ...data };
+}))).subscribe((res:any)=>{
+  console.log(res);
+  let d= new Date;
+  
+let a=res.filter(item=>{
+  let dummy=new Date(item.date)
+  console.log(dummy);
+let cyear=dummy.getFullYear();
+let cmonth= dummy.getMonth();
+return cyear==d.getFullYear() && cmonth== d.getMonth()
+})
+console.log(a);
+this.monthLotteries=a;
+
+})
+}
+
+getWeeklyLotteries(){
+  this.api.getSpecificLottery(localStorage.getItem('softUser')).pipe(map(list => list.map(a => {
+    const data = a.payload.doc.data();
+    const id = a.payload.doc.id;
+    return { id, ...data };
+  }))).subscribe((res:any)=>{
+    console.log(res);
+ 
+    var curr = new Date; 
+    console.log(curr.getDate());
+    console.log(curr.getDay());
+    curr.setUTCHours(0,0,0,0)
+    var first = (curr.getDate() - curr.getDay())+4; // First day is the day of the month - the day of the week
+var last = first + 7; // last day is the first day + 6
+
+var firstday = new Date(curr.setDate(first));
+var lastday = new Date(curr.setDate(last));
+console.log(firstday);
+console.log(lastday);
+  let a=res.filter(item=>{
+    var dummy=new Date(item.date)
+    console.log(dummy);
+
+  return dummy>=firstday && dummy< lastday
+  })
+  console.log(a);
+  this.weekLotteries=a;
+  // this.monthLotteries=a;
+  
+  })
+  }
+
+
+
+
+
+
+
+
+
+
+
   choosePicture() {
     console.log("object");
     let myfunc = () => {
