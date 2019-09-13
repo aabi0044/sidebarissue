@@ -19,7 +19,10 @@ sourcex: any;
 softUid;
 ref: AngularFireStorageReference;
 task: AngularFireUploadTask;
-
+image=false;
+lotteryNo;
+lotteryImage;
+color;
   constructor(private api:ApiService,private helper:HelperService,
     private camera: Camera,
     private afStorage: AngularFireStorage,
@@ -48,7 +51,18 @@ task: AngularFireUploadTask;
     console.log(rand);
   }
   newPoints(){
-    this.newEntry=true;
+    
+  this.newEntry=true;
+
+
+
+  }
+  addLottery(){
+    if (this.lotteryNo!=null){
+
+    }else{
+      this.color='red';
+    }
   }
   choosePicture() {
     console.log("object");
@@ -97,6 +111,7 @@ task: AngularFireUploadTask;
           this.helper.presentToast('Picture uploaded successfully.');
           this.userImage = url;
           console.log(this.userImage);
+          this.image=true;
   
           
       //for updating url in profile node
@@ -118,4 +133,5 @@ task: AngularFireUploadTask;
       });
  
   }
+
 }
