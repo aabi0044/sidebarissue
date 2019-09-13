@@ -11,9 +11,11 @@ export class MainPage implements OnInit {
 
   ngOnInit() {
     var curr = new Date; 
+    console.log(curr.getDate());
+    console.log(curr.getDay());
     curr.setUTCHours(0,0,0,0)
-    var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
-var last = first + 6; // last day is the first day + 6
+    var first = (curr.getDate() - curr.getDay())+4; // First day is the day of the month - the day of the week
+var last = first + 7; // last day is the first day + 6
 
 var firstday = new Date(curr.setDate(first)).toUTCString();
 var lastday = new Date(curr.setDate(last)).toUTCString();
