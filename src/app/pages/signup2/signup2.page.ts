@@ -32,8 +32,10 @@ this.auth.signup(this.api.user.email,this.password).then((res:any)=>{
     dob:this.api.user.dob,
     country:this.api.user.country,
     terms:this.api.user.agreement,
-    emailNotification:this.api.user.emailNotification
+    emailNotification:this.api.user.emailNotification,
+    creationDate:Date.now()
   }
+  console.log(data);
 this.api.createUser(res.user.uid,data).then(resp=>{
   console.log("user Created");
   this.nav.navigateRoot(['/menu/home']);
