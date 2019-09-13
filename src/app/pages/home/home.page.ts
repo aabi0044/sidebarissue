@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorageReference, AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
-import { finalize } from 'rxjs/operators';
+import { finalize, first } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api/api.service';
 import { HelperService } from 'src/app/services/helper/helper.service';
 import { Router } from '@angular/router';
@@ -23,10 +23,15 @@ image=false;
 lotteryNo;
 lotteryImage;
 color;
+userData;
   constructor(private api:ApiService,private helper:HelperService,
     private camera: Camera,
     private afStorage: AngularFireStorage,
-    ) { }
+    ) {
+      this.api.getUser(localStorage.getItem('softUser')).pipe(first()).toPromise().then(res=>{
+this.userData=res;
+      })
+     }
 
   ngOnInit() {
     var myArray=[{
@@ -59,7 +64,27 @@ color;
   }
   addLottery(){
     if (this.lotteryNo!=null){
-
+let data={
+  lotteryNo:this.lotteryNo,
+  lotteryImage:this.lotteryImage,
+  date: new Date
+}
+this.api.addLottery(data).then((res:any)=>{
+let data1={
+  points:this.userData.points+1
+}
+this.api.updateUser(localStorage.getItem('softUser'),data1).then(res=>{
+this.helper.presentToast('Data submitted Successfully..');
+this.lotteryNo=null;
+this.lotteryImage='';
+this.userImage=null;
+this.newEntry=false;
+}).catch(err=>{
+  this.helper.presentToast(err)
+})
+}).catch(err=>{
+  this.helper.presentToast(err)
+})
     }else{
       this.color='red';
     }
@@ -112,6 +137,7 @@ color;
           this.userImage = url;
           console.log(this.userImage);
           this.image=true;
+          this.lotteryImage=this.userImage;
   
           
       //for updating url in profile node
