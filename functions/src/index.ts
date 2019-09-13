@@ -1,9 +1,5 @@
 import * as functions from 'firebase-functions';
-export const everyFiveMinuteJob = functions.pubsub
 
-    .schedule('every 1 minutes').onRun(context => {
-        console.log('This will be run every 1 minutes!');  
-     });
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //

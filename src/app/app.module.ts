@@ -15,6 +15,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import{FormsModule} from '@angular/forms';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import{FormsModule} from '@angular/forms';
     StatusBar,
     SplashScreen,
     Facebook,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
