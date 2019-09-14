@@ -1,13 +1,37 @@
-ion-content,
+ion-back-button {
+    --color: var(--ion-color-white, #fff);
+}
+
 ion-toolbar {
-    --ion-background-color: #a9bee3;
-    --background: #a9bee3;
-    background-color: #a9bee3;
+    --ion-background-color: #3b449e;
+    --background: #3b449e;
+    background-color: #3b449e;
+}
+
+ion-content {
+    // --ion-background-color: #a9bee3;
+    // --background: #a9bee3;
+    // background-color: #a9bee3;
+    --background: url(../../../assets/img/bg-darkblue.png) 0 0/100% 100% no-repeat;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    // opacity: 0.4;
 }
 
 .logo {
     // width: 400px;
     max-width: 70%;
+}
+
+.bluewave {
+    max-width: 104%;
+    border: 0;
+    margin: 0 -8px;
+    padding-top: 14%;
 }
 
 .mt-30 {
@@ -31,4 +55,8 @@ ion-button,
 ion-datetime,
 ion-select {
     border-radius: 20px;
+}
+
+.text-white {
+    color: #fff;
 }
