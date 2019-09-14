@@ -1,14 +1,38 @@
+ion-content,
+ion-toolbar {
+    --ion-background-color: #a9bee3;
+    --background: #a9bee3;
+    background-color: #a9bee3;
+}
+
+.whitewave {
+    max-width: 104%;
+    border: 0;
+    margin: 0 -8px;
+    padding-top: 3%;
+}
+
+.logo {
+    // width: 400px;
+    max-width: 70%;
+}
+
 .mt-30 {
-    margin-top: 30%;
+    margin-top: 20%;
 }
 
 .heading {
     font-size: 3vh;
 }
 
+.text-white {
+    color: white;
+}
+
 ion-input {
-    border: 1px solid var(--ion-color-primary);
+    border: 1px solid var(--ion-color-primary) !important;
     padding: 12px;
+    background: white !important;
 }
 
 ion-input,

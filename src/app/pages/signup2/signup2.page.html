@@ -9,7 +9,8 @@
 <ion-content>
   <ion-row>
     <ion-col text-center>
-      <img src="../../../assets/img/logo.svg">
+      <img class="whitewave" src="../../../assets/img/blue wave.png">
+      <img class="logo" src="../../../assets/img/logo.png">
     </ion-col>
   </ion-row>
 
@@ -26,13 +27,15 @@
   </ion-row>
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-input [(ngModel)]="password" name="password" placeholder="Fill in your new password..." type="password" padding></ion-input>
+      <ion-input [(ngModel)]="password" name="password" placeholder="Fill in your new password..." type="password"
+        padding></ion-input>
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-input [(ngModel)]="repassword" name="repasssword" placeholder="Confirm your new password..." type="password" padding></ion-input>
+      <ion-input [(ngModel)]="repassword" name="repasssword" placeholder="Confirm your new password..." type="password"
+        padding></ion-input>
     </ion-col>
   </ion-row>
 
@@ -45,13 +48,13 @@
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical" [ngStyle]="{'color': color}">
-      <ion-checkbox [(ngModel)]="cnf" name="cnf"  mode="md" color="secondary"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="cnf" name="cnf" mode="md" color="secondary"></ion-checkbox>
       I confirm that all the filled data, is filled correctly.
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-button color="secondary"  (click)="register()" expand="block" text-center>Sign up</ion-button>
+      <ion-button color="secondary" (click)="register()" expand="block" text-center>Sign up</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

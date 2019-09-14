@@ -9,9 +9,11 @@
 <ion-content>
   <ion-row>
     <ion-col text-center>
-      <img src="../../../assets/img/logo.svg">
+      <img class="whitewave" src="../../../assets/img/blue wave.png">
+      <img class="logo" src="../../../assets/img/logo.png">
     </ion-col>
   </ion-row>
+
 
   <ion-row class="mt-30">
     <ion-col text-center size="8" offset="2">
@@ -44,17 +46,20 @@
 
   <ion-row>
     <ion-col size="8" offset="2">
-      <ion-input [(ngModel)]="email" [ngStyle]="{'color': color}" name="email" placeholder="E-mail address" type="email" padding></ion-input>
+      <ion-input [(ngModel)]="email" [ngStyle]="{'color': color}" name="email" placeholder="E-mail address" type="email"
+        padding></ion-input>
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="2"></ion-col>
     <ion-col size="2">
-      <ion-input placeholder="+.." type="number" maxlength="2" [(ngModel)]="phoneExtension" name="phoneExtension" padding></ion-input>
+      <ion-input placeholder="+.." type="number" maxlength="2" [(ngModel)]="phoneExtension" name="phoneExtension"
+        padding></ion-input>
     </ion-col>
     <ion-col size="6">
-      <ion-input placeholder="Phone Number" [(ngModel)]="phone" name="phone" type="number" padding size="5"></ion-input>
+      <ion-input placeholder="Phone Number" [(ngModel)]="phone" name="phone" type="number" padding size="5">
+      </ion-input>
     </ion-col>
     <ion-col size="2"></ion-col>
   </ion-row>
@@ -321,14 +326,15 @@
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-checkbox [(ngModel)]="emailNotification" name="emailNotification" mode="md" color="secondary"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="emailNotification" name="emailNotification" mode="md" color="secondary">
+      </ion-checkbox>
       I want to receive notification in terms of e-mail when I win a prize.
     </ion-col>
   </ion-row>
 
   <ion-row>
     <ion-col size="8" offset="2" class="ion-margin-vertical">
-      <ion-button color="secondary"  expand="block" text-center (click)="continue()">Continue</ion-button>
+      <ion-button color="secondary" expand="block" text-center (click)="continue()">Continue</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

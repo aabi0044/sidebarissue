@@ -1,5 +1,17 @@
+ion-content {
+    // #2e2e92;
+    --ion-background-color: #2964b0;
+    --background: #2964b0;
+    background-color: #2964b0;
+}
+
 ion-menu-button {
     display: block !important;
+}
+
+.logo {
+    width: 66%;
+    padding-top: 7%;
 }
 
 .secondbg {
@@ -33,28 +45,65 @@ ion-menu-button {
 
 ion-input {
     border: 1px solid var(--ion-color-primary);
+    background-color: white;
+    color: black;
 }
 
 .lotterylbl {
     font-size: 5vh;
+    color: #fff;
 }
 
 .bb {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .redeembtn {
     --background: linear-gradient(to right, #a1c4d9 0%, #c0b1d6 100%);
+    color: #2964b0;
 }
-.upload{
+
+.upload {
     --background: linear-gradient(to right, #78b4d6 50%, #8044db 100%);
+    color: #2964b0;
 }
+
 .readybtn {
     --background: #a8d7be;
+    font-size: large;
+
 }
 
 ion-input,
 ion-button {
     border-radius: 20px;
+    font-size: large;
+}
+
+.nextlotteryrow {
+    .bellicon {
+        font-size: 90px;
+        color: #fbe24b;
+        margin-top: 14%;
+    }
+
+    .timer {
+        font-weight: bold;
+        color: #fff;
+        font-size: 4vh;
+
+    }
+
+    .lbl {
+        font-weight: lighter;
+        color: #fff;
+        font-size: 4vh;
+    }
+
+    p {
+        font-size: 4vh;
+        margin: 0;
+        color: #fbe24b;
+    }
 }

@@ -1,3 +1,15 @@
+ion-content,
+ion-toolbar {
+    --ion-background-color: #a9bee3;
+    --background: #a9bee3;
+    background-color: #a9bee3;
+}
+
+.logo {
+    // width: 400px;
+    max-width: 70%;
+}
+
 .mt-30 {
     margin-top: 10%;
 }
@@ -11,6 +23,7 @@ ion-datetime,
 ion-select {
     border: 1px solid var(--ion-color-primary);
     padding: 12px;
+    background: white !important;
 }
 
 ion-input,

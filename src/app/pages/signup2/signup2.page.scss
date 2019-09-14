@@ -1,6 +1,19 @@
+ion-content,
+ion-toolbar {
+    --ion-background-color: #a9bee3;
+    --background: #a9bee3;
+    background-color: #a9bee3;
+}
+
+.logo {
+    // width: 400px;
+    max-width: 70%;
+}
+
 .mt-30 {
     margin-top: 10%;
 }
+
 
 .heading {
     font-size: 2vh;
