@@ -6,6 +6,7 @@ import { HelperService } from 'src/app/services/helper/helper.service';
 import { Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { map } from 'rxjs/operators';
+import { FcmService } from 'src/app/services/fcm/fcm.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -31,10 +32,16 @@ export class HomePage implements OnInit {
   constructor(private api: ApiService, private helper: HelperService,
     private camera: Camera,
     private afStorage: AngularFireStorage,
+    private fcm:FcmService
   ) {
     this.api.getUser(localStorage.getItem('softUser')).subscribe(res => {
       this.userData = res;
     })
+    
+
+    this.fcm.getPermission().subscribe();
+    
+  
   }
 
   ngOnInit() {

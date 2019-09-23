@@ -16,6 +16,8 @@ import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import{FormsModule} from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
+import {AngularFireMessagingModule} from '@angular/fire/messaging';
+import {AngularFireFunctionsModule} from '@angular/fire/functions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,9 @@ import { Camera } from '@ionic-native/camera/ngx';
     AngularFireAuthModule,
     FormsModule,
     AngularFireStorageModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireMessagingModule,
+    AngularFireFunctionsModule
   ],
   providers: [
     StatusBar,
