@@ -18,11 +18,11 @@ export class MenuPage implements OnInit {
       url: '/menu/aboutus',
       icon: 'people'
     },
-    {
-      title: 'Instructions',
-      url: '/menu/instructions',
-      icon: 'cube'
-    },
+    // {
+    //   title: 'Instructions',
+    //   url: '/menu/instructions',
+    //   icon: 'cube'
+    // },
     {
       title: 'Lottery',
       url: '/menu/lottery',
@@ -31,6 +31,11 @@ export class MenuPage implements OnInit {
     {
       title: 'Contact',
       url: '/menu/contact',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Disclaimer',
+      url: '/menu/disclaimer',
       icon: 'paper-plane'
     }
   ];
