@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "688930278094",
+    "firebase_url": "https://softex-app-50196.firebaseio.com",
+    "project_id": "softex-app-50196",
+    "storage_bucket": "softex-app-50196.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688930278094:android:374405c57cf3f6c9f81e9f",
+        "android_client_info": {
+          "package_name": "com.appspot.softex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688930278094-jc3ml7nroglroiea36jv0l84er2v6q2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAmPFE860323HtzlfgMwC4RDdOOwewhlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688930278094-jc3ml7nroglroiea36jv0l84er2v6q2m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
