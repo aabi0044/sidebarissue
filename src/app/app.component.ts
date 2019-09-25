@@ -22,13 +22,7 @@ export class AppComponent {
     private toastCtrl: ToastController,
   ) {
     platform.ready().then(() => {
-      this.platform.pause.subscribe(() => {
-        console.log('[INFO] App paused');
-    });
 
-    this.platform.resume.subscribe(() => {
-        console.log('[INFO] App resumed');
-    });
       // Get a FCM token
       fcm.getToken()
 

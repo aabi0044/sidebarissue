@@ -29,9 +29,11 @@
     "@ionic/angular": "^4.7.1",
     "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
+    "cordova-plugin-androidx": "^1.0.2",
+    "cordova-plugin-androidx-adapter": "^1.1.0",
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-facebook4": "^6.0.0",
-    "cordova-plugin-firebase": "^2.0.5",
+    "cordova-plugin-firebasex": "^6.1.0",
     "core-js": "^2.5.4",
     "firebase": "^6.6.0",
     "rxjs": "~6.5.1",
@@ -90,7 +92,11 @@
       "cordova-plugin-camera": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
+<<<<<<< HEAD
       "cordova-plugin-firebase": {}
+=======
+      "cordova-plugin-firebasex": {}
+>>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
     },
     "platforms": [
       "browser",
