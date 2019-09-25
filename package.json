@@ -92,11 +92,7 @@
       "cordova-plugin-camera": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-<<<<<<< HEAD
-      "cordova-plugin-firebase": {}
-=======
       "cordova-plugin-firebasex": {}
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
     },
     "platforms": [
       "browser",
