@@ -11,6 +11,7 @@ import * as app from 'firebase';
 // Import firebase to fix temporary bug in AngularFire
 
 import { Observable } from 'rxjs';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,9 @@ export class FcmService {
     private platform: Platform,
     private afMessaging: AngularFireMessaging,
     private fun: AngularFireFunctions,
+    public firebaseNative: Firebase,
     private toastController: ToastController) {
-      try {
-        const _messaging = app.messaging();
-        _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging);
-        _messaging.onMessage = _messaging.onMessage.bind(_messaging);
-      } catch(e){
-        console.log(e);
-      }
+  
 
     }
     getPermission(): Observable<any>  {
@@ -91,34 +87,34 @@ export class FcmService {
 
 
   
-    // async getToken() {
+    async getToken() {
 
-    //   let token;
+      let token;
     
-    //   if (this.platform.is('android')) {
-    //     token = await this.firebaseNative.getToken()
-    //   } 
+      if (this.platform.is('android')) {
+        token = await this.firebaseNative.getToken()
+      } 
     
-    //   if (this.platform.is('ios')) {
-    //     token = await this.firebaseNative.getToken();
-    //     await this.firebaseNative.grantPermission();
-    //   } 
+      if (this.platform.is('ios')) {
+        token = await this.firebaseNative.getToken();
+        await this.firebaseNative.grantPermission();
+      } 
       
-    //   return this.saveTokenToFirestore(token)
-    // }
-    // private saveTokenToFirestore(token) {
-    //   if (!token) return;
+      return this.saveTokenToFirestore(token)
+    }
+    private saveTokenToFirestore(token) {
+      if (!token) return;
     
-    //   const devicesRef = this.afs.collection('devices')
+      const devicesRef = this.afs.collection('devices')
     
-    //   const docData = { 
-    //     token,
-    //     userId: 'testUser',
-    //   }
+      const docData = { 
+        token,
+        userId: 'testUser',
+      }
     
-    //   return devicesRef.doc(token).set(docData)
-    // }
-    // listenToNotifications() {
-    //   return this.firebaseNative.onNotificationOpen()
-    // }
+      return devicesRef.doc(token).set(docData)
+    }
+    listenToNotifications() {
+      return this.firebaseNative.onNotificationOpen()
+    }
 }

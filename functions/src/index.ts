@@ -1,19 +1,44 @@
 import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
 
+import * as admin from 'firebase-admin';
 admin.initializeApp();
 
-export const subscribeToTopic = functions.https.onCall(
-    async (data, context) => {
-        alert(data)
-      await admin.messaging().subscribeToTopic(data.token, data.topic);
-  
-      return `subscribed to ${data.topic}`;
+
+exports.newSubscriberNotification = functions.firestore
+    .document('winners/{winnersId}')
+    .onCreate(async (event:any) => {
+
+    const data = event.after.data();
+    console.log(data);
+    const userId = data.userId
+    const subscriber = data.subscriberId
+
+    // Notification content
+    const payload = {
+      notification: {
+          title: 'New Subscriber',
+          body: `${subscriber} is following your content!`,
+          icon: 'https://goo.gl/Fz9nrQ'
+      }
     }
-  );
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+
+    // ref to the device collection for the user
+    const db = admin.firestore()
+    const devicesRef = db.collection('devices').where('userId', '==', userId)
+
+
+    // get the user's tokens and send notifications
+    const devices = await devicesRef.get();
+
+     let tokens :any;
+
+    // send a notification to each device token
+    devices.forEach(result => {
+      const token = result.data().token;
+
+      tokens.push( token )
+    })
+
+    return admin.messaging().sendToDevice(tokens, payload)
+
+});

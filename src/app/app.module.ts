@@ -11,13 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { Facebook } from '@ionic-native/facebook/ngx';
+
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import{FormsModule} from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
 import {AngularFireMessagingModule} from '@angular/fire/messaging';
 import {AngularFireFunctionsModule} from '@angular/fire/functions';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,8 +35,9 @@ import {AngularFireFunctionsModule} from '@angular/fire/functions';
   providers: [
     StatusBar,
     SplashScreen,
-    Facebook,
+   
     Camera,
+  
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

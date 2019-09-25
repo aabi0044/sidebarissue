@@ -4,6 +4,9 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { FcmService } from './services/fcm/fcm.service';
+import { ToastController } from '@ionic/angular';
+
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +18,44 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private fcm: FcmService
+    private fcm: FcmService,
+    private toastCtrl: ToastController,
   ) {
-    this.initializeApp();
-  }
+    platform.ready().then(() => {
+      this.platform.pause.subscribe(() => {
+        console.log('[INFO] App paused');
+    });
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.fcm.showMessages().subscribe();
+    this.platform.resume.subscribe(() => {
+        console.log('[INFO] App resumed');
+    });
+      // Get a FCM token
+      fcm.getToken()
+
+      // Listen to incoming messages
+      fcm.listenToNotifications().pipe(
+        tap(msg => {
+          // show a toast
+     this.presentToast(msg.body)
+
+        })
+      )
+      .subscribe()
     });
   }
+  async presentToast(msg) {
+    const toast = await this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  // initializeApp() {
+  //   this.platform.ready().then(() => {
+  //     this.statusBar.styleDefault();
+  //     this.splashScreen.hide();
+  //     this.fcm.showMessages().subscribe();
+  //   });
+  // }
 }

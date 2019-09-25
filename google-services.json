@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "226391289251",
-    "firebase_url": "https://points-809fd.firebaseio.com",
-    "project_id": "points-809fd",
-    "storage_bucket": "points-809fd.appspot.com"
+    "project_number": "986601769839",
+    "firebase_url": "https://softex-app.firebaseio.com",
+    "project_id": "softex-app",
+    "storage_bucket": "softex-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:226391289251:android:db28c044e4bdbd29fdbe16",
+        "mobilesdk_app_id": "1:986601769839:android:62f990d59c83f10908b69a",
         "android_client_info": {
           "package_name": "com.softex.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "226391289251-diaq9sbt54bq72vbbr6mgh3trbncqv72.apps.googleusercontent.com",
+          "client_id": "986601769839-qdj10d6r4k2tjans62b5nhp9b9jdnum0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softex.app",
+            "certificate_hash": "fbb55bb01c2600998d8e7f2fc64024907853e92f"
+          }
+        },
+        {
+          "client_id": "986601769839-ns067t6gquc7j3hp5m903asibvbo0u12.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAe6iPFmwbEhDyJoOThwdmAghprSnjYl2Y"
+          "current_key": "AIzaSyCm9fqOLnCV9sQpCzSk96hI7zBSDBbHPmw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "226391289251-diaq9sbt54bq72vbbr6mgh3trbncqv72.apps.googleusercontent.com",
+              "client_id": "986601769839-ns067t6gquc7j3hp5m903asibvbo0u12.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
