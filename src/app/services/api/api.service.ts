@@ -36,4 +36,7 @@ return this.afs.doc('users/'+id).valueChanges();
   getSpecificLottery(id){
     return this.afs.collection('lotteries',ref=>ref.where('userId','==',id)).snapshotChanges();
   }
+  getWinners(){
+    return this.afs.collection('winners').snapshotChanges();
+  }
 }

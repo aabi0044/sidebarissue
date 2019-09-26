@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { Router } from '@angular/router';
+import { HelperService } from 'src/app/services/helper/helper.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,7 @@ phoneExtension;
 terms=false;
 emailNotification=false;
 color;
-  constructor(private api:ApiService,private router:Router) { }
+  constructor(private api:ApiService,private router:Router,private helper:HelperService) { }
 
   ngOnInit() {
   }
@@ -30,6 +31,7 @@ this.country=event;
       this.color='green';
       if(this.name !=null && this.email!=null && this.country!=null &&
         this.phone!=null && this.phoneExtension!=null&&this.dob!=null){
+          
           this.phoneExtension=String(this.phoneExtension);
           this.phone=String(this.phone);
  this.api.user.name=this.name;
@@ -46,9 +48,11 @@ this.country=event;
  
        }else{
  console.log("please Fill all");
+ this.helper.presentToast('Please fill all inputs..')
        }
     }else{
       console.log("bad email ");
+      this.helper.presentToast('please fill correct data..')
       this.color='red';
     }
 

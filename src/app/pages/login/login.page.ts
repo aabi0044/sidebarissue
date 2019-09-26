@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { HelperService } from 'src/app/services/helper/helper.service';
 // import undefined = require('firebase/empty-import');
 
 @Component({
@@ -22,7 +23,8 @@ export class LoginPage implements OnInit {
   
     public loadingCtrl: LoadingController,
     private fireAuth: AngularFireAuth,
-    private auth: AuthService
+    private auth: AuthService,
+    private helper:HelperService
   ) {
     let a = localStorage.getItem('softemail');
     let b = localStorage.getItem('softpassword');
@@ -50,10 +52,14 @@ export class LoginPage implements OnInit {
     console.log(err);
   }
   login() {
+   
     console.log(this.remember);
     if (this.email! + null && this.password != null && this.email != '' && this.password != '') {
+      this.helper.presentLoading('Logining...')
       this.auth.login(this.email, this.password).then((res: any) => {
         localStorage.setItem('softUser', res.user.uid);
+        this.helper.dismissLoad();
+        this.helper.presentToast('login successfully.')
         if (this.remember == true) {
           localStorage.setItem('softemail', this.email);
           localStorage.setItem('softpassword', this.password);
@@ -64,8 +70,13 @@ export class LoginPage implements OnInit {
 
 
       }).catch(err => {
+        this.helper.dismissLoad();
+        this.helper.presentToast(err)
         console.log(err);
       })
+    }else{
+   
+      this.helper.presentToast('Please Fill all the inputs..')
     }
   }
 }
