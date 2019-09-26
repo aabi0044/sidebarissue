@@ -1,34 +1,20 @@
 {
   "project_info": {
-<<<<<<< HEAD
     "project_number": "986601769839",
     "firebase_url": "https://softex-app.firebaseio.com",
     "project_id": "softex-app",
     "storage_bucket": "softex-app.appspot.com"
-=======
-    "project_number": "688930278094",
-    "firebase_url": "https://softex-app-50196.firebaseio.com",
-    "project_id": "softex-app-50196",
-    "storage_bucket": "softex-app-50196.appspot.com"
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
   },
   "client": [
     {
       "client_info": {
-<<<<<<< HEAD
         "mobilesdk_app_id": "1:986601769839:android:62f990d59c83f10908b69a",
         "android_client_info": {
           "package_name": "com.softex.app"
-=======
-        "mobilesdk_app_id": "1:688930278094:android:374405c57cf3f6c9f81e9f",
-        "android_client_info": {
-          "package_name": "com.appspot.softex"
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
         }
       },
       "oauth_client": [
         {
-<<<<<<< HEAD
           "client_id": "986601769839-qdj10d6r4k2tjans62b5nhp9b9jdnum0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -38,30 +24,19 @@
         },
         {
           "client_id": "986601769839-ns067t6gquc7j3hp5m903asibvbo0u12.apps.googleusercontent.com",
-=======
-          "client_id": "688930278094-jc3ml7nroglroiea36jv0l84er2v6q2m.apps.googleusercontent.com",
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
           "client_type": 3
         }
       ],
       "api_key": [
         {
-<<<<<<< HEAD
           "current_key": "AIzaSyCm9fqOLnCV9sQpCzSk96hI7zBSDBbHPmw"
-=======
-          "current_key": "AIzaSyAAmPFE860323HtzlfgMwC4RDdOOwewhlQ"
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-<<<<<<< HEAD
               "client_id": "986601769839-ns067t6gquc7j3hp5m903asibvbo0u12.apps.googleusercontent.com",
-=======
-              "client_id": "688930278094-jc3ml7nroglroiea36jv0l84er2v6q2m.apps.googleusercontent.com",
->>>>>>> 3edb550d2f188b98370f5d951501ad76401a8880
               "client_type": 3
             }
           ]
