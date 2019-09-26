@@ -99,8 +99,10 @@ export class FcmService {
         token = await this.firebaseNative.getToken();
         await this.firebaseNative.grantPermission();
       } 
-      
-      return this.saveTokenToFirestore(token)
+      if(localStorage.getItem('softUser')){
+        return this.saveTokenToFirestore(token)
+      }
+    
     }
     private saveTokenToFirestore(token) {
       if (!token) return;
@@ -109,7 +111,7 @@ export class FcmService {
     
       const docData = { 
         token,
-        userId: 'testUser',
+        userId: localStorage.getItem('softUser'),
       }
     
       return devicesRef.doc(token).set(docData)

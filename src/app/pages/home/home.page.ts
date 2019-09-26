@@ -39,7 +39,7 @@ export class HomePage implements OnInit {
     })
     
 
-    this.fcm.getPermission().subscribe();
+    this.fcm.getToken();
     
   
   }

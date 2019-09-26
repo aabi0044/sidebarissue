@@ -28,7 +28,7 @@ export class AppComponent {
 
       // Listen to incoming messages
       fcm.listenToNotifications().pipe(
-        tap(msg => {
+        tap((msg:any) => {
           // show a toast
      this.presentToast(msg.body)
 

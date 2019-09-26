@@ -1,6 +1,7 @@
 import * as functions from 'firebase-functions';
 
 import * as admin from 'firebase-admin';
+
 admin.initializeApp();
 
 
@@ -8,17 +9,19 @@ exports.newSubscriberNotification = functions.firestore
     .document('winners/{winnersId}')
     .onCreate(async (event:any) => {
 
-    const data = event.after.data();
-    console.log(data);
-    const userId = data.userId
-    const subscriber = data.subscriberId
+    const data = event.data();
+
+    const userId = data.id;
+    const name= data.name;
+  
 
     // Notification content
     const payload = {
       notification: {
-          title: 'New Subscriber',
-          body: `${subscriber} is following your content!`,
-          icon: 'https://goo.gl/Fz9nrQ'
+          title: 'Winner of the week',
+          body: `congratulation ${name}, you won lottery this week`,
+          icon:'../src/bluelogo.png'
+     
       }
     }
 
@@ -30,7 +33,7 @@ exports.newSubscriberNotification = functions.firestore
     // get the user's tokens and send notifications
     const devices = await devicesRef.get();
 
-     let tokens :any;
+     let tokens:Array<any>=[];
 
     // send a notification to each device token
     devices.forEach(result => {
