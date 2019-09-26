@@ -14,10 +14,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import{FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
-import {AngularFireMessagingModule} from '@angular/fire/messaging';
-import {AngularFireFunctionsModule} from '@angular/fire/functions';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { Firebase } from '@ionic-native/firebase/ngx';
 
 @NgModule({
@@ -35,11 +35,11 @@ import { Firebase } from '@ionic-native/firebase/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-   
+    Firebase,
     Camera,
-  
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
