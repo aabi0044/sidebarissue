@@ -28,6 +28,9 @@ export class HomePage implements OnInit {
   userData;
   monthLotteries;
   weekLotteries;
+  nextLotteryDay;
+  nextLotteryMonth;
+  nextLotteryYear;
 
   constructor(private api: ApiService, private helper: HelperService,
     private camera: Camera,
@@ -146,6 +149,47 @@ export class HomePage implements OnInit {
       var lastday = new Date(curr.setDate(last));
       console.log(firstday);
       console.log(lastday);
+     this.nextLotteryDay=lastday.getDay();
+     let upMonth=lastday.getMonth();
+    this.nextLotteryYear=lastday.getFullYear();
+    
+     if(upMonth==1){
+       this.nextLotteryMonth='January'
+     }
+     else if(upMonth==2){
+      this.nextLotteryMonth='Febraury'
+     }
+     else if(upMonth==3){
+      this.nextLotteryMonth='March'
+     }
+     else if(upMonth==4){
+      this.nextLotteryMonth='April'
+     }
+     else if(upMonth==5){
+      this.nextLotteryMonth='May'
+     }
+     else if(upMonth==6){
+      this.nextLotteryMonth='June'
+     }
+     else if(upMonth==7){
+      this.nextLotteryMonth='July'
+     }
+     else if(upMonth==8){
+      this.nextLotteryMonth='August'
+     }
+     else if(upMonth==9){
+      this.nextLotteryMonth='September'
+     }
+     else if(upMonth==10){
+      this.nextLotteryMonth='October'
+     }
+     else if(upMonth==11){
+      this.nextLotteryMonth='November'
+     }
+     else if(upMonth==12){
+      this.nextLotteryMonth='December'
+     }
+
       let a = res.filter(item => {
         var dummy = new Date(item.date)
         console.log(dummy);
