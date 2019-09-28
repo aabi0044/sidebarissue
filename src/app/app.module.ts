@@ -27,6 +27,11 @@ import { Firebase } from '@ionic-native/firebase/ngx';
     AngularFireModule.initializeApp(environment.fire),
     AngularFireAuthModule,
     FormsModule,
+    IonicModule.forRoot(
+      {
+        mode: 'md'
+      }
+    ),
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireMessagingModule,

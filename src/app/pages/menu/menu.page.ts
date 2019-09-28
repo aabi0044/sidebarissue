@@ -36,7 +36,7 @@ export class MenuPage implements OnInit {
     {
       title: 'Disclaimer',
       url: '/menu/disclaimer',
-      icon: 'paper-plane'
+      icon: 'book'
     }
   ];
   selectedPath = '';
