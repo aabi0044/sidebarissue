@@ -14,6 +14,33 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  pages = [
+    {
+      title: 'Home',
+      url: '/sidemenu/home',
+      icon: 'home'
+    },
+    {
+      title: 'About us',
+      url: '/sidemenu/aboutus',
+      icon: 'home'
+    },
+    {
+      title: 'Instructions',
+      url: '/sidemenu/instructions',
+      icon: 'home'
+    },
+    {
+      title: 'Lottery',
+      url: '/sidemenu/lottery',
+      icon: 'home'
+    },
+    {
+      title: 'Contact',
+      url: '/sidemenu/contact',
+      icon: 'home'
+    }
+  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

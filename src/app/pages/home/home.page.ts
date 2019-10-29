@@ -37,6 +37,7 @@ export class HomePage implements OnInit {
     private afStorage: AngularFireStorage,
     private fcm:FcmService
   ) {
+    
     this.api.getUser(localStorage.getItem('softUser')).subscribe(res => {
       this.userData = res;
     })
@@ -79,7 +80,7 @@ export class HomePage implements OnInit {
 
   }
   addLottery() {
-    if (this.lotteryNo != null) {
+    if (this.lotteryNo != null && this.lotteryImage !=null) {
       let data = {
         lotteryNo: this.lotteryNo,
         lotteryImage: this.lotteryImage,
@@ -93,7 +94,7 @@ export class HomePage implements OnInit {
         this.api.updateUser(localStorage.getItem('softUser'), data1).then(res => {
           this.helper.presentToast('Data submitted Successfully..');
           this.lotteryNo = null;
-          this.lotteryImage = '';
+          this.lotteryImage = null;
           this.userImage = null;
           this.newEntry = false;
         }).catch(err => {
@@ -104,7 +105,7 @@ export class HomePage implements OnInit {
       })
     } else {
       this.color = 'red';
-      this.helper.presentToast('Enter Lottery Number ')
+      this.helper.presentToast('Enter Lottery Number or choose picture ')
     }
   }
 

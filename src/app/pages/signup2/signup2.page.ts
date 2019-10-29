@@ -62,7 +62,7 @@ export class Signup2Page implements OnInit {
       } else {
       
         this.helper.dismissLoad();
-        this.helper.presentToast('Please fill all inputs..');
+        this.helper.presentToast('Please fill all inputs correctly..');
       }
     } else {
       this.color = 'red';
