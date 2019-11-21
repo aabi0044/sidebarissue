@@ -54,7 +54,7 @@ export class LoginPage implements OnInit {
   login() {
    
     console.log(this.remember);
-    if (this.email! + null && this.password != null && this.email != '' && this.password != '') {
+    if (this.email!= null && this.password != null && this.email != '' && this.password != '') {
       this.helper.presentLoading('Logining...')
       this.auth.login(this.email, this.password).then((res: any) => {
         localStorage.setItem('softUser', res.user.uid);

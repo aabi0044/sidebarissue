@@ -6,7 +6,7 @@ import { AlertController, LoadingController, ToastController, ActionSheetControl
 })
 export class HelperService {
 
- 
+  isLoading = false;
   loader: any=null;
   alert: any;
   notLength: number;
@@ -31,14 +31,28 @@ export class HelperService {
     await actionSheet.present();
   }
   async presentLoading(msg) {
-    this.loader = await this.loadingController.create({
+  
+    return await this.loadingController.create({
+      duration:1500,
       message: msg,
       spinner: "crescent"
+    }).then(a => {
+      a.present().then(() => {
+        console.log('presented');
+        console.log(this.isLoading);
+        if (!this.isLoading) {
+          a.dismiss().then(() => console.log('abort presenting'));
+        }
+      });
     });
-    await this.loader.present();
+
+
+
   }
   async dismissLoad() {
-    await this.loader.dismiss();
+    this.isLoading = false;
+    console.log(this.isLoading);
+    return await this.loadingController.dismiss().then(() => console.log('dismissed'));
   }
 
   async presentToast(msg) {

@@ -150,8 +150,11 @@ export class HomePage implements OnInit {
       var lastday = new Date(curr.setDate(last));
       console.log(firstday);
       console.log(lastday);
-     this.nextLotteryDay=lastday.getDay();
-     let upMonth=lastday.getMonth();
+      let date= new Date(lastday)
+      console.log(date);
+     this.nextLotteryDay=lastday.getDate();
+     console.log(this.nextLotteryDay);
+     let upMonth=lastday.getMonth()+1;
     this.nextLotteryYear=lastday.getFullYear();
     
      if(upMonth==1){
