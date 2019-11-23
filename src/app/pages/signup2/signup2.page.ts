@@ -27,8 +27,8 @@ export class Signup2Page implements OnInit {
       if (this.password == this.repassword && this.password != null && this.repassword != null) {
         this.helper.presentLoading('Processing Request... ')
         this.auth.signup(this.api.user.email, this.password).then((res: any) => {
-this.auth.SendVerificationMail();
-this.helper.presentToast('Please verify your email')
+
+
 
 
           console.log(res);
@@ -50,7 +50,7 @@ this.helper.presentToast('Please verify your email')
             this.helper.presentToast('Successfully Registered...');
 
             console.log("user Created");
-            this.nav.navigateRoot(['/menu/home']);
+            this.auth.SendVerificationMail();
           }).catch(err => {
             console.log(err);
             this.helper.dismissLoad();

@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'signup2', loadChildren: './pages/signup2/signup2.module#Signup2PageModule' },  { path: 'disclaimer', loadChildren: './pages/disclaimer/disclaimer.module#DisclaimerPageModule' },
+  { path: 'verifyemail', loadChildren: './pages/verifyemail/verifyemail.module#VerifyemailPageModule' },
 
 ];
 

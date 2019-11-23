@@ -58,15 +58,26 @@ export class LoginPage implements OnInit {
       this.helper.presentLoading('Logining...')
       this.auth.login(this.email, this.password).then((res: any) => {
         localStorage.setItem('softUser', res.user.uid);
-        this.helper.dismissLoad();
-        this.helper.presentToast('login successfully.')
-        if (this.remember == true) {
-          localStorage.setItem('softemail', this.email);
-          localStorage.setItem('softpassword', this.password);
-          this.router.navigate(["/menu/home"]);
-        } else {
-          this.router.navigate(["/menu/home"]);
+        if (res.user.emailVerified !== true) {
+          this.auth.SendVerificationMail();
+          this.helper.dismissLoad();
+          alert('Please validate your email address. Kindly check your inbox.');
+
+        }else{
+          this.helper.dismissLoad();
+          if (this.remember == true) {
+            localStorage.setItem('softemail', this.email);
+            localStorage.setItem('softpassword', this.password);
+            this.router.navigate(["/menu/home"]);
+            this.helper.presentToast('login successfully.')
+          } else {
+            this.router.navigate(["/menu/home"]);
+            this.helper.presentToast('login successfully.')
+          }
         }
+       
+
+    
 
 
       }).catch(err => {
