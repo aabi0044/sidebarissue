@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private afAuth:AngularFireAuth) { }
   signup(email, password){
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
 
   }
   login(email, password){
@@ -19,5 +19,9 @@ export class AuthService {
     
     console.log("object");
     this.afAuth.auth.signOut()
+  }
+  SendVerificationMail() {
+    return this.afAuth.auth.currentUser.sendEmailVerification()
+  
   }
 }

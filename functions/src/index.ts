@@ -2,9 +2,6 @@ import * as functions from 'firebase-functions';
 
 import * as admin from 'firebase-admin';
 
-admin.initializeApp();
-
-
 exports.newSubscriberNotification = functions.firestore
     .document('winners/{winnersId}')
     .onCreate(async (event:any) => {
